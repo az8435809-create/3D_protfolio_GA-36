@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Ali Zain — Promo (render page)</title>
+<style>
+/* Video render page: every frame is drawn from seek(t), so capture is frame-accurate. 1920x1080 */
+:root{--bg:#12211A;--gold:#D9A821;--gold2:#E8B923;--cream:#F5F0E6;--body:#C9CFC9;--serif:'Playfair Display','Lora',Georgia,serif;--sans:'Manrope','Inter',sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#0b1610}
+#stage{position:relative;width:1920px;height:1080px;overflow:hidden;background:radial-gradient(70% 60% at 70% 40%,#1e3226,#0b1610 70%);font-family:var(--sans);color:var(--cream)}
+.abs{position:absolute}.full{position:absolute;inset:0}
+.serif{font-family:var(--serif);font-weight:700}
+.label{font-size:24px;font-weight:800;letter-spacing:8px;text-transform:uppercase;color:var(--gold2)}
+em{font-style:italic;font-weight:500;color:var(--gold2)}
+.word{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em;margin-bottom:-.1em}.word>span{display:inline-block}
+/* scene layers */
+#scene{position:absolute;inset:0}#scene .scene-layer{position:absolute;left:-4%;width:108%;max-width:none;bottom:0;height:100%}
+.sky{position:absolute;inset:0;background:radial-gradient(60% 55% at 70% 38%,rgba(232,206,140,.30),transparent 70%),linear-gradient(180deg,#0b1610 0%,#16271d 35%,#3a4a3a 62%,#1a2a20 100%)}
+.fog{position:absolute;left:-20%;width:140%;border-radius:50%;filter:blur(40px)}
+.fog-1{top:48%;height:26%;background:radial-gradient(closest-side,rgba(200,210,190,.32),transparent)}
+.fog-2{top:60%;height:30%;background:radial-gradient(closest-side,rgba(170,185,165,.26),transparent)}
+.l-far{opacity:.9}
+#bokeh,#grainc{position:absolute;inset:0;width:1920px;height:1080px}
+#vignette{background:radial-gradient(120% 90% at 50% 50%,transparent 55%,rgba(0,0,0,.6))}
+.wipe{position:absolute;top:-20%;height:140%;width:62%;background:linear-gradient(90deg,var(--gold),var(--gold2));transform:skewX(-14deg)}
+.card{position:absolute;border-radius:26px;overflow:hidden;background:linear-gradient(170deg,#1b2a20,#16231b);border:2px solid rgba(217,168,33,.3)}
+.bar{height:14px;border-radius:99px;background:rgba(245,240,230,.08);overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,#B8890F,#E8B923);border-radius:inherit;box-shadow:0 0 18px rgba(232,185,35,.7)}
+.chip{display:inline-block;padding:14px 26px;border-radius:99px;border:2px solid rgba(217,168,33,.55);color:var(--gold2);font-weight:800;font-size:26px;margin:0 14px 16px 0;background:rgba(217,168,33,.08)}
+.tag{display:inline-block;padding:8px 18px;border-radius:99px;border:1.5px solid rgba(217,168,33,.4);color:var(--gold2);font-size:20px;font-weight:700;margin-right:10px;background:rgba(217,168,33,.08)}
+</style></head>
+<body><div id="stage">
+  <div id="scene" class="full">{{SCENE}}</div>
+  <canvas id="bokeh" width="1920" height="1080"></canvas>
+  <div id="shade" class="full" style="background:linear-gradient(90deg,rgba(10,20,14,.9),rgba(10,20,14,.55) 40%,transparent 70%),linear-gradient(0deg,#12211A,transparent 30%)"></div>
+
+  <!-- S1 title -->
+  <div id="s1" class="full">
+    <svg id="peak" class="abs" style="left:810px;top:250px;width:300px" viewBox="0 0 200 80"><path d="M2 78 L60 22 L84 46 L118 8 L198 78" pathLength="1" fill="none" stroke="#D9A821" stroke-width="3" stroke-linejoin="round" stroke-dasharray="1" stroke-dashoffset="1"/></svg>
+    <h1 id="title" class="abs serif" style="left:0;right:0;top:370px;text-align:center;font-size:230px;line-height:1"></h1>
+    <p id="sub" class="abs label" style="left:0;right:0;top:640px;text-align:center">Portfolio · 2026</p>
+  </div>
+  <!-- S2 intro -->
+  <div id="s2" class="full">
+    <div id="halo" class="abs" style="left:1130px;top:110px;width:620px;height:620px;border-radius:50%;border:2px solid rgba(232,185,35,.55);box-shadow:0 0 80px rgba(232,185,35,.3),inset 0 0 80px rgba(232,185,35,.15);background:radial-gradient(circle,rgba(232,185,35,.35),transparent 65%)"></div>
+    <canvas id="rock" data-rock="hero" class="abs" style="left:1000px;top:600px;width:880px;height:440px"></canvas>
+    <img id="hero" class="abs" src="../assets/ali.webp" style="left:1290px;top:140px;height:600px;filter:drop-shadow(0 0 40px rgba(232,185,35,.25)) drop-shadow(-12px 24px 24px rgba(0,0,0,.5))">
+    <p id="s2l" class="abs label" style="left:130px;top:250px">Hello, I'm Ali Zain</p>
+    <h2 id="s2h" class="abs serif" style="left:130px;top:300px;width:1000px;font-size:104px;line-height:1.04"></h2>
+    <p id="s2p" class="abs" style="left:130px;top:770px;font-size:34px;color:#d5dad3">Web Developer &amp; UI Designer · Karachi, Pakistan</p>
+  </div>
+  <!-- S3 skills -->
+  <div id="s3" class="full" style="background:linear-gradient(180deg,#13221a,#1a241a)">
+    <div id="ghost" class="abs serif" style="top:540px;font-size:420px;white-space:nowrap;color:transparent;-webkit-text-stroke:2px rgba(217,168,33,.14)">ARSENAL · ARSENAL · ARSENAL</div>
+    <p id="s3l" class="abs label" style="left:130px;top:120px">What I bring</p>
+    <h2 id="s3h" class="abs serif" style="left:130px;top:165px;font-size:120px">My <em>Arsenal</em></h2>
+    <div id="skills" class="abs" style="left:130px;top:380px;width:1660px;display:grid;grid-template-columns:1fr 1fr;column-gap:120px;row-gap:56px"></div>
+    <div id="mq" class="abs" style="left:-40px;right:-40px;top:930px;background:linear-gradient(90deg,#D9A821,#E8B923);transform:rotate(-1.5deg);padding:22px 0;overflow:hidden"><div id="mqt" class="serif" style="white-space:nowrap;color:#13200f;font-size:44px"></div></div>
+  </div>
+  <!-- S4 projects -->
+  <div id="s4" class="full" style="background:radial-gradient(60% 60% at 50% 55%,#1f3427,#0f1b14 75%)">
+    <p id="s4l" class="abs label" style="left:130px;top:90px">Featured work</p>
+    <h2 id="s4h" class="abs serif" style="left:130px;top:135px;font-size:104px">Selected <em>Expeditions</em></h2>
+    <p id="s4n" class="abs serif" style="right:130px;top:150px;font-size:64px;color:var(--gold2)"></p>
+    <div id="track" class="abs" style="left:0;top:330px;width:1920px;height:440px;perspective:1800px"></div>
+    <div id="cap" class="abs" style="left:0;right:0;top:800px;text-align:center"></div>
+  </div>
+  <!-- S5 avatar -->
+  <div id="s5" class="full" style="background:radial-gradient(55% 65% at 30% 55%,#25392b,#0f1b14 75%)">
+    <div class="abs" style="left:150px;top:120px;width:760px;height:760px;border-radius:50%;background:radial-gradient(circle,rgba(232,185,35,.3),rgba(217,168,33,.05) 55%,transparent 70%);border:2px solid rgba(232,185,35,.3)"></div>
+    <canvas id="rock2" data-rock="small" class="abs" style="left:180px;top:770px;width:700px;height:230px"></canvas>
+    <canvas id="av" class="abs" style="left:80px;top:40px;width:900px;height:1000px"></canvas>
+    <p id="s5l" class="abs label" style="left:1040px;top:260px">Now in 3D</p>
+    <h2 id="s5h" class="abs serif" style="left:1040px;top:305px;font-size:120px;line-height:1.02">Meet the<br><em>3D Me</em></h2>
+    <div id="s5c" class="abs" style="left:1040px;top:600px;width:800px"></div>
+  </div>
+  <!-- S6 achievements -->
+  <div id="s6" class="full" style="background:linear-gradient(180deg,#12211A,#1a241a)">
+    <p id="s6l" class="abs label" style="left:130px;top:140px">The trail so far</p>
+    <div id="stats" class="abs" style="left:130px;top:200px;display:flex;gap:70px"></div>
+    <div id="tl" class="abs" style="left:130px;top:560px;width:760px;height:200px"></div>
+    <div class="abs" style="left:1000px;top:200px;width:820px;perspective:1400px">
+      <div id="cert" style="position:relative;border-radius:16px;overflow:hidden;box-shadow:0 0 0 2px rgba(232,185,35,.6),0 0 0 14px rgba(22,35,27,.95),0 0 0 16px rgba(217,168,33,.4),0 60px 100px -30px #000">
+        <img src="../assets/certificate.webp" style="display:block;width:100%"><div id="glare" class="full"></div></div>
+      <p id="certcap" class="label" style="margin-top:56px;text-align:center;font-size:22px">CodeSphere 3.0 · Build4Better · NED University</p>
+    </div>
+  </div>
+  <!-- S7 CTA -->
+  <div id="s7" class="full">
+    <img id="hero2" class="abs" src="../assets/ali.webp" style="left:870px;top:110px;height:330px;transform-origin:50% 100%">
+    <div id="bub" class="abs serif" style="left:1080px;top:110px;background:#F5F0E6;color:#13200f;font-style:italic;font-size:34px;padding:16px 26px;border-radius:24px 24px 24px 6px">Salaam! Say hello.</div>
+    <h2 id="s7h" class="abs serif" style="left:0;right:0;top:480px;text-align:center;font-size:110px;line-height:1.05"></h2>
+    <p id="mail" class="abs serif" style="left:0;right:0;top:770px;text-align:center;font-size:72px">az8435809<em>@</em>gmail.com</p>
+    <div id="mline" class="abs" style="left:640px;width:640px;top:870px;height:4px;background:var(--gold);transform-origin:left"></div>
+    <p id="s7p" class="abs label" style="left:0;right:0;top:920px;text-align:center;font-size:22px">Web Developer &amp; UI Designer · Karachi, Pakistan</p>
+  </div>
+  <div id="end" class="full" style="background:#0b1610;display:grid;place-items:center"><div class="serif" style="font-size:120px">Ali Zain<span style="display:inline-block;width:26px;height:26px;border-radius:50%;background:#D9A821;margin-left:10px;box-shadow:0 0 30px #D9A821"></span></div></div>
+  <div class="wipe" id="wipe"></div>
+  <canvas id="grainc" width="480" height="270" style="opacity:.09;mix-blend-mode:overlay;image-rendering:pixelated"></canvas>
+  <div id="vignette" class="full"></div>
+</div>
+<div style="display:none"><div id="skillsGrid"></div><div id="testiGrid"></div></div>
+<script src="../js/content.js"></script>
+<script src="../js/rock.js"></script>
+<script src="../js/avatar.js"></script>
+<script src="promo.js"></script>
+</body></html>

@@ -1,0 +1,36 @@
+<section class="section projects" id="projects">
+  <canvas class="field-canvas" data-rock="field" aria-hidden="true"></canvas>
+  <div class="container">
+    <div class="section-head split-head">
+      <div>
+        <p class="label" data-reveal>Featured work</p>
+        <h2 class="h2" data-split>Selected <em>Expeditions</em></h2>
+      </div>
+      <p class="lead" data-reveal>Six projects, each one a different mountain. Open a case study to see how it was built.</p>
+    </div>
+    <div class="proj-tools" data-reveal>
+      <div class="filters" role="group" aria-label="Filter projects by category">
+        <button class="chip-btn" aria-pressed="true" data-filter="all">All</button>
+        <button class="chip-btn" aria-pressed="false" data-filter="web,ai">Web &amp; AI</button>
+        <button class="chip-btn" aria-pressed="false" data-filter="3d,motion">3D &amp; Motion</button>
+        <button class="chip-btn" aria-pressed="false" data-filter="game,vr">Games &amp; VR</button>
+      </div>
+      <div class="tool-right">
+        <label class="search"><span class="sr-only">Search projects</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/></svg><input type="search" id="projSearch" placeholder="Search projects or tools" autocomplete="off"></label>
+        <label class="select"><span class="sr-only">Sort projects</span><select id="projSort"><option value="featured">Featured</option><option value="az">A to Z</option><option value="za">Z to A</option><option value="category">By category</option><option value="custom">My order</option></select></label>
+        <button class="chip-btn arrange-btn" id="arrangeBtn" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>Arrange</button>
+      </div>
+    </div>
+    <div class="arrange-bar" id="arrangeBar" hidden><span>Drag cards, or use the arrow buttons, to set your own order. It is saved in this browser.</span><button class="link-btn" id="resetOrder" type="button">Reset order</button><button class="btn btn-gold btn-sm" id="doneArrange" type="button">Done</button></div>
+    <p class="result-count" id="projCount" aria-live="polite"></p>
+    <div class="projects-grid" id="projectsGrid" data-stagger></div>
+    <div class="empty-state" id="projEmpty" hidden><p>No expeditions match that search.</p><button class="btn btn-outline btn-sm" id="clearFilters" type="button">Clear filters</button></div>
+  </div>
+</section>
+<div class="modal" id="caseModal" role="dialog" aria-modal="true" aria-labelledby="caseTitle" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card">
+    <button class="modal-x" data-close aria-label="Close case study"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div id="caseBody"></div>
+  </div>
+</div>

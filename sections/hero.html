@@ -1,0 +1,34 @@
+<section class="hero" id="home">
+  {{HERO_SCENE}}
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="label" data-reveal>Hello, I'm Ali Zain</p>
+      <h1 class="hero-title" data-split>I Build Digital Experiences That Reach <em>New Heights.</em></h1>
+      <p class="hero-sub" data-reveal style="--d:.5s">I'm a Web Developer &amp; UI Designer from Karachi, Pakistan. I turn ideas into clean, fast and beautiful websites.</p>
+      <div class="hero-btns" data-reveal style="--d:.62s">
+        <a href="#projects" class="btn btn-gold magnetic">View my work <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="assets/Ali-Zain-CV.pdf" class="btn btn-outline magnetic" download data-cv>Download CV <svg viewBox="0 0 24 24"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg></a>
+        <button class="play-intro" type="button" data-open-video data-track="video:open"><span class="pi-circle"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg></span><span class="pi-text"><b>Watch the intro</b><small>46-second promo</small></span></button>
+      </div>
+      <dl class="stats" data-reveal style="--d:.74s">
+        <div><dt><span data-count="2">0</span>+</dt><dd>Years</dd></div>
+        <div><dt><span data-count="25">0</span>+</dt><dd>Projects</dd></div>
+        <div><dt><span data-count="15">0</span>+</dt><dd>Happy clients</dd></div>
+      </dl>
+    </div>
+    <div class="hero-stage" id="heroStage">
+      <div class="stage-float">
+        <div class="halo"><span class="halo-ring r1"></span><span class="halo-ring r2"></span><span class="halo-glow"></span></div>
+        <canvas class="rock-canvas" id="heroRock" data-rock="hero"></canvas>
+        <img class="mascot hero-mascot" src="assets/ali.webp" alt="Ali Zain's 3D character in a brown checkered suit, standing on a floating rock" width="454" height="887">
+        <span class="feet-shadow"></span>
+      </div>
+    </div>
+  </div>
+  <a href="#about" class="scroll-cue" aria-label="Scroll to explore"><span>Scroll to explore</span><i><svg viewBox="0 0 24 24"><path d="M12 4v15M6 13l6 6 6-6"/></svg></i></a>
+</section>
+<div class="marquee" aria-label="Web development, UI/UX design, React, Next.js, Figma">
+  <div class="marquee-track">
+    {{MARQUEE}}
+  </div>
+</div>

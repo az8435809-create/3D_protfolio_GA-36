@@ -1,0 +1,37 @@
+<section class="section reel" id="reel" aria-labelledby="reelTitle">
+  <div class="container">
+    <div class="section-head split-head">
+      <div>
+        <p class="label" data-reveal>Showreel</p>
+        <h2 class="h2" id="reelTitle" data-split>The 46-Second <em>Climb</em></h2>
+      </div>
+      <p class="lead" data-reveal>A short animated intro to who I am, what I build and where I'm heading. Jump to any chapter.</p>
+    </div>
+    <div class="reel-grid">
+      <div class="reel-player" data-reveal>
+        <div class="reel-frame">
+          <video id="reelVideo" playsinline muted loop preload="metadata" poster="video/poster.jpg" aria-describedby="reelDesc">
+            <source src="video/AliZain_Promo_720p.mp4" type="video/mp4">
+            <track kind="captions" src="video/promo.vtt" srclang="en" label="English">
+          </video>
+          <button class="reel-play" id="reelPlay" type="button" data-track="video:play-sound">
+            <span class="rp-circle"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg></span>
+            <span class="rp-text">Play with sound</span>
+          </button>
+          <span class="reel-badge" id="reelBadge" aria-hidden="true"><i></i>Preview · muted</span>
+        </div>
+        <div class="reel-progress" aria-hidden="true"><i id="reelBar"></i></div>
+        <p id="reelDesc" class="sr-only">Promotional video introducing Ali Zain: name and introduction, skills, six projects, the 3D avatar, achievements and contact email. Captions available.</p>
+      </div>
+      <ol class="chapters" id="chapters" aria-label="Video chapters">
+        <li><button data-t="0"><span class="ch-time">0:00</span><span class="ch-name">Title</span></button></li>
+        <li><button data-t="5.6"><span class="ch-time">0:06</span><span class="ch-name">Hello, I'm Ali</span></button></li>
+        <li><button data-t="11.2"><span class="ch-time">0:11</span><span class="ch-name">My arsenal</span></button></li>
+        <li><button data-t="18.2"><span class="ch-time">0:18</span><span class="ch-name">Selected expeditions</span></button></li>
+        <li><button data-t="28.2"><span class="ch-time">0:28</span><span class="ch-name">Meet the 3D me</span></button></li>
+        <li><button data-t="34.2"><span class="ch-time">0:34</span><span class="ch-name">The trail so far</span></button></li>
+        <li><button data-t="40.2"><span class="ch-time">0:40</span><span class="ch-name">Let's climb together</span></button></li>
+      </ol>
+    </div>
+  </div>
+</section>

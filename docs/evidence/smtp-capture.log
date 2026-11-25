@@ -1,0 +1,3 @@
+SMTP sink on 2525
+DELIVERED <az8435809@gmail.com> -> ['<az8435809@gmail.com>'] /home/claude/repo/tests/out/inbox/20261125-061213-1.eml
+DELIVERED <az8435809@gmail.com> -> ['<az8435809@gmail.com>'] /home/claude/repo/tests/out/inbox/20261125-061400-2.eml

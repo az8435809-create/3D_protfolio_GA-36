@@ -1,0 +1,44 @@
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="#home" class="logo">Ali Zain<span class="dot"></span></a>
+    <nav class="footer-links" aria-label="Footer"><a href="#about">About</a><a href="#reel">Reel</a><a href="#avatar">3D Me</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#journey">Journey</a><a href="#contact">Contact</a></nav>
+    <a href="#home" class="to-top" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M12 20V5M6 11l6-6 6 6"/></svg></a>
+  </div>
+  <div class="container footer-base"><p>© 2026 Ali Zain. Crafted with passion in Karachi.</p><a href="#insights" data-open-insights>Site insights</a><a href="mailto:az8435809@gmail.com">az8435809@gmail.com</a></div>
+</footer>
+
+<div class="modal" id="insightsModal" role="dialog" aria-modal="true" aria-labelledby="insTitle" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card insights-card">
+    <button class="modal-x" data-close aria-label="Close insights"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div class="case-body"><span class="p-cat">Analytics</span><h3 id="insTitle">Site insights</h3><div id="insightsBody"></div>
+      <div class="p-actions ins-actions"><button class="btn btn-outline btn-sm" id="insCopy" type="button">Copy data (JSON)</button><button class="btn btn-outline btn-sm" id="insReset" type="button">Reset</button></div></div>
+  </div>
+</div>
+<button class="chat-fab" id="chatFab" type="button" aria-expanded="false" aria-controls="chatPanel" data-track="chat:open">
+  <span class="cf-ava"><img src="assets/ali-bust.webp" alt="" width="44" height="44"></span><span class="cf-txt"><b>Ask my AI</b><small>About Ali's work</small></span><span class="cf-ping" aria-hidden="true"></span>
+</button>
+<section class="chat-panel" id="chatPanel" role="dialog" aria-modal="false" aria-labelledby="chatTitle" hidden>
+  <header class="chat-head">
+    <span class="ch-ava"><img src="assets/ali-bust.webp" alt="" width="40" height="40"><i class="online" aria-hidden="true"></i></span>
+    <div><h2 id="chatTitle">Ali's AI assistant</h2><p id="chatMode">Answers only from Ali's documents</p></div>
+    <button class="ch-icon" id="chatInfo" type="button" aria-label="How this assistant works" aria-expanded="false" aria-controls="chatHow"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg></button>
+    <button class="ch-icon" id="chatReset" type="button" aria-label="Start a new conversation"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5"/></svg></button>
+    <button class="ch-icon" id="chatClose" type="button" aria-label="Close assistant"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </header>
+  <div class="chat-how" id="chatHow" hidden>
+    <b>How it works (RAG)</b>
+    <ol><li>Ali's CV, projects, skills, education and achievements are split into searchable chunks.</li><li>Each chunk is turned into an embedding vector and stored in a vector index.</li><li>Your question is embedded and the closest chunks are retrieved (vector + keyword search).</li><li>A language model writes the answer using only those chunks, with numbered sources.</li></ol>
+    <p>If the documents don't contain the answer, it says so instead of guessing.</p>
+  </div>
+  <div class="chat-log" id="chatLog" role="log" aria-live="polite" aria-relevant="additions"></div>
+  <div class="chat-suggest" id="chatSuggest" aria-label="Suggested questions">
+    <button type="button">Where does Ali study?</button><button type="button">What are his main skills?</button><button type="button">Tell me about the VR project</button><button type="button">Has he won any awards?</button><button type="button">Is he open to freelance work?</button>
+  </div>
+  <form class="chat-form" id="chatForm" autocomplete="off">
+    <label for="chatInput" class="sr-only">Ask a question about Ali</label>
+    <textarea id="chatInput" rows="1" maxlength="500" placeholder="Ask about Ali's projects, skills, education…"></textarea>
+    <button type="submit" id="chatSend" aria-label="Send question"><svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></button>
+  </form>
+  <p class="chat-foot">AI answers can be imperfect — sources are shown under each answer.</p>
+</section>

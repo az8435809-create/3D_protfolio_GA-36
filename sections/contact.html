@@ -1,0 +1,54 @@
+<section class="section contact" id="contact">
+  <div class="contact-glow" aria-hidden="true"></div>
+  <div class="container contact-inner">
+    <div class="contact-figure" data-reveal>
+      <div class="hello-bubble">Salaam! Say hello.</div>
+      <div class="wave-wrap"><img class="mascot contact-mascot" src="assets/ali.webp" alt="Ali Zain's 3D character greeting you" width="454" height="887" loading="lazy"></div>
+      <canvas class="rock-canvas small" data-rock="small"></canvas>
+    </div>
+    <p class="label" data-reveal>Contact</p>
+    <h2 class="h2 contact-title" data-split>Let's Climb To The Top <em>Together.</em></h2>
+    <p class="lead" data-reveal>Have a project in mind? Let's build something crazy. One email is all it takes.</p>
+    <div class="contact-grid">
+      <form class="contact-form" id="contactForm" novalidate data-reveal aria-labelledby="cfTitle">
+        <div class="cf-head"><h3 id="cfTitle">Send a message</h3><p>It goes straight to Ali's inbox. Fields marked * are required.</p></div>
+        <div class="cf-row">
+          <div class="field"><label for="cfName">Name *</label><input id="cfName" name="name" type="text" autocomplete="name" maxlength="80" required aria-describedby="cfNameErr"><p class="err" id="cfNameErr" aria-live="polite"></p></div>
+          <div class="field"><label for="cfEmail">Email address *</label><input id="cfEmail" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required aria-describedby="cfEmailErr"><p class="err" id="cfEmailErr" aria-live="polite"></p></div>
+        </div>
+        <div class="field"><label for="cfSubject">Subject *</label><input id="cfSubject" name="subject" type="text" maxlength="120" required aria-describedby="cfSubjectErr"><p class="err" id="cfSubjectErr" aria-live="polite"></p></div>
+        <div class="field"><label for="cfMessage">Message *</label><textarea id="cfMessage" name="message" rows="6" maxlength="4000" required aria-describedby="cfMessageErr cfCount"></textarea>
+          <div class="field-foot"><p class="err" id="cfMessageErr" aria-live="polite"></p><span class="count" id="cfCount">0 / 4000</span></div></div>
+        <div class="hp" aria-hidden="true"><label for="cfWebsite">Leave this field empty</label><input id="cfWebsite" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <div class="cf-actions">
+          <button class="btn btn-gold cf-submit" id="cfSubmit" type="submit" data-track="contact:form-submit"><span class="cf-spin" aria-hidden="true"></span><span class="cf-label">Send message</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></button>
+          <p class="cf-privacy">Your details are only used to reply to you. Protected by spam filtering and rate limits.</p>
+        </div>
+        <div class="cf-status" id="cfStatus" role="status" aria-live="polite"></div>
+      </form>
+      <aside class="mail-card side" data-reveal>
+        <span class="mail-kicker">Prefer email?</span>
+        <a class="mail-big" id="mailBig" href="mailto:az8435809@gmail.com?subject=Hello%20Ali%20%E2%80%94%20let's%20work%20together">
+          <span class="mail-text">az8435809<span class="at">@</span>gmail.com</span>
+          <span class="mail-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+        </a>
+        <div class="mail-actions">
+          <button class="btn btn-outline magnetic" id="copyMail" type="button"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>Copy address</span></button>
+        </div>
+        <div class="topics">
+          <span class="topics-label">Quick start a topic</span>
+          <div class="topic-chips">
+            <a href="#contactForm" data-topic="New website project">New website</a>
+            <a href="#contactForm" data-topic="UI/UX design work">UI/UX design</a>
+            <a href="#contactForm" data-topic="3D / interactive web experience">3D &amp; interactive</a>
+            <a href="#contactForm" data-topic="Full-time or freelance role">Hiring</a>
+            <a href="#contactForm" data-topic="Just saying hi">Just saying hi</a>
+          </div>
+        </div>
+        <button class="ask-ai" type="button" data-open-chat data-track="chat:open-from-contact"><span class="ai-dot"></span>Have a quick question? <b>Ask my AI assistant</b></button>
+      </aside>
+    </div>
+    <p class="contact-meta" data-reveal><span class="pulse"></span>Open to freelance and full-time work · Karachi, Pakistan · Remote worldwide</p>
+  </div>
+</section>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>

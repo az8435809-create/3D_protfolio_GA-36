@@ -1,0 +1,20 @@
+.nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:100;width:min(1240px,100% - 32px);height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 12px 0 26px;border-radius:999px;
+  background:rgba(18,33,26,.42);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);border:1px solid rgba(245,240,230,.07);transition:background-color .5s,box-shadow .5s,border-color .5s,top .5s var(--ease)}
+.nav.scrolled{background:rgba(10,20,14,.86);border-color:rgba(217,168,33,.18);box-shadow:0 18px 50px -18px rgba(0,0,0,.75);top:10px}
+.logo{font-family:var(--serif);font-size:1.45rem;font-weight:700;color:var(--cream);letter-spacing:-.01em;white-space:nowrap}
+.nav-links{display:flex;gap:6px}
+.nav-links a{position:relative;padding:10px 14px;font-size:.72rem;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;color:rgba(245,240,230,.72);transition:color .3s}
+.nav-links a::after{content:"";position:absolute;left:14px;right:14px;bottom:4px;height:1.5px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.nav-links a:hover,.nav-links a.active{color:var(--cream)}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);transform-origin:left}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);position:relative}
+.burger span{position:absolute;left:13px;right:13px;height:1.5px;background:var(--cream);transition:transform .5s var(--ease),top .5s var(--ease)}
+.burger span:first-child{top:18px}.burger span:last-child{top:26px}
+.burger[aria-expanded="true"] span:first-child{top:22px;transform:rotate(45deg)}
+.burger[aria-expanded="true"] span:last-child{top:22px;transform:rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;z-index:99;background:rgba(10,20,14,.97);backdrop-filter:blur(10px);display:flex;flex-direction:column;justify-content:center;gap:40px;padding:110px 32px 40px;clip-path:circle(0 at calc(100% - 50px) 50px);transition:clip-path .8s var(--ease-io);visibility:hidden}
+.mobile-menu.open{clip-path:circle(150% at calc(100% - 50px) 50px);visibility:visible}
+.mobile-menu nav{display:flex;flex-direction:column;gap:6px}
+.mobile-menu nav a{font-family:var(--serif);font-size:2.5rem;color:var(--cream);display:flex;align-items:baseline;gap:16px;padding:4px 0;border-bottom:1px solid var(--line-soft)}
+.mobile-menu nav a i{font-family:var(--sans);font-style:normal;font-size:.75rem;letter-spacing:2px;color:var(--gold)}
+.mobile-menu .btn{align-self:flex-start}
